@@ -1,0 +1,28 @@
+body {
+  font-family: Arial;
+  background: #f9f9f9;
+  padding: 20px;
+}
+input, textarea, button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+}
+button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.centered {
+  text-align: center;
+  max-width: 400px;
+  margin: auto;
+}
+.grafico-container {
+  margin-top: 20px;
+}
+canvas {
+  max-width: 100%;
+}
