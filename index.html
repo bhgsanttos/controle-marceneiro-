@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Controle do Marceneiro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="login-page" class="centered">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Seu nome" />
+    <button onclick="login()">Entrar</button>
+  </div>
+
+  <div id="dashboard" style="display:none;">
+    <h2>Bem-vindo, <span id="user-name"></span></h2>
+    <input type="text" id="cliente" placeholder="Nome do cliente" />
+    <input type="text" id="projeto" placeholder="Descrição do projeto" />
+    <input type="number" id="valor" placeholder="Valor recebido (R$)" />
+    <input type="text" id="material" placeholder="Material comprado" />
+    <input type="number" id="custo" placeholder="Custo do material (R$)" />
+    <input type="datetime-local" id="data" />
+    <textarea id="observacao" placeholder="Observações..."></textarea>
+    <button onclick="salvar()">Salvar Projeto</button>
+    <button onclick="fecharMes()">Fechar Mês</button>
+
+    <div class="grafico-container">
+      <canvas id="graficoPizza"></canvas>
+      <canvas id="graficoBarra"></canvas>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
