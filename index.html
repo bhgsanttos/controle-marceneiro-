@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Controle do Marceneiro</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- LOGIN e CADASTRO -->
+<div id="auth-page" class="centered">
+  <h2>Login</h2>
+  <input type="text" id="login-username" placeholder="Usuário" />
+  <input type="password" id="login-password" placeholder="Senha" />
+  <button onclick="fazerLogin()">Entrar</button>
+  <p>Não tem conta? <a href="#" onclick="mostrarCadastro()">Cadastre-se</a></p>
+</div>
+
+<div id="register-page" class="centered" style="display:none;">
+  <h2>Cadastro</h2>
+  <input type="text" id="register-username" placeholder="Usuário" />
+  <input type="password" id="register-password" placeholder="Senha" />
+  <input type="password" id="register-password-confirm" placeholder="Confirme a senha" />
+  <button onclick="fazerCadastro()">Cadastrar</button>
+  <p>Já tem conta? <a href="#" onclick="mostrarLogin()">Faça login</a></p>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" style="display:none; max-width: 600px; margin: auto;">
+  <h2>Bem-vindo, <span id="user-display"></span> <button onclick="logout()" style="float:right;">Sair</button></h2>
+
+  <h3>Novo Projeto</h3>
+  <input type="text" id="cliente" placeholder="Nome do cliente" />
+  <input type="text" id="nome-projeto" placeholder="Nome do projeto" />
+  <input type="number" id="valor-recebido" placeholder="Valor recebido (R$)" />
+  <input type="text" id="material" placeholder="Material comprado" />
+  <input type="number" id="custo-material" placeholder="Custo material (R$)" />
+  <input type="number" id="gasto-gasolina" placeholder="Gasto em gasolina (R$)" />
+  <input type="number" id="gasto-pedagio" placeholder="Gasto em pedágio (R$)" />
+  <input type="number" id="gasto-estacionamento" placeholder="Gasto em estacionamento (R$)" />
+  <input type="number" id="gasto-agua-luz" placeholder="Gasto em água/luz (R$)" />
+  <textarea id="observacoes" placeholder="Observações"></textarea>
+  <input type="datetime-local" id="data-projeto" />
+  <button onclick="salvarProjeto()">Salvar projeto</button>
+
+  <h3>Resumo do projeto:</h3>
+  <p id="resumo-projeto">Preencha os campos para ver o resumo</p>
+
+  <h3>Histórico de projetos:</h3>
+  <ul id="historico-projetos"></ul>
+
+  <h3>Calculadora Simples</h3>
+  <input type="text" id="calc-display" readonly style="width: 100%; padding: 10px; font-size: 1.2em;" />
+  <div id="calc-buttons" style="display:grid; grid-template-columns: repeat(4, 1fr); gap:5px;">
+    <button onclick="calcInput('7')">7</button>
+    <button onclick="calcInput('8')">8</button>
+    <button onclick="calcInput('9')">9</button>
+    <button onclick="calcInput('/')">÷</button>
+    <button onclick="calcInput('4')">4</button>
+    <button onclick="calcInput('5')">5</button>
+    <button onclick="calcInput('6')">6</button>
+    <button onclick="calcInput('*')">×</button>
+    <button onclick="calcInput('1')">1</button>
+    <button onclick="calcInput('2')">2</button>
+    <button onclick="calcInput('3')">3</button>
+    <button onclick="calcInput('-')">−</button>
+    <button onclick="calcInput('0')">0</button>
+    <button onclick="calcInput('.')">.</button>
+    <button onclick="calcClear()">C</button>
+    <button onclick="calcInput('+')">+</button>
+    <button style="grid-column: span 4;" onclick="calcCalculate()">=</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
